@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/nft/BluumNft.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/nft/</a> BluumNft.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.75% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>15/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>19/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>5/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.88% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>31/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity 0.8.18;
+&nbsp;
+// Importing necessary OpenZeppelin contracts
+import "@openzeppelin/contracts/utils/Strings.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
+import "@openzeppelin/contracts/utils/Base64.sol";
+&nbsp;
+// Importing necessary local contracts and interfaces
+import "./BluumFactory.sol";
+import "../interfaces/IAccessManager.sol";
+import "../interfaces/IBluumNft.sol";
+import "../interfaces/IWhitelist.sol";
+&nbsp;
+/**
+ * @title BluumNft
+ * @notice This contract is responsible for all operations related to Bluum NFTs including minting and metadata management.
+ */
+contract BluumNft is IBluumNft, ERC721Upgradeable {
+    using Strings for uint256;
+    using Counters for Counters.Counter;
+&nbsp;
+    // Mapping from token ID to Metadata.
+    mapping(uint256 =&gt; Metadata) private tokenMetadata;
+&nbsp;
+    // Counter to keep track of the token IDs.
+    Counters.Counter private tokenIdTracker;
+&nbsp;
+    // Bluum Factory contract instance.
+    BluumFactory public factory;
+    // Access Manager contract instance.
+    IAccessManager public accessManager;
+    // Whitelist contract instance.
+    IWhitelist public whitelist;
+&nbsp;
+    /**
+     * @dev Initializes the contract.
+     * @param _name The name of the NFT.
+     * @param _symbol The symbol of the NFT.
+     * @param _accessManager The access manager contract address.
+     * @param _whitelist The whitelist contract address.
+     */
+    function initialize(
+        string memory _name,
+        string memory _symbol,
+        IAccessManager _accessManager,
+        IWhitelist _whitelist
+    ) external <span class="missing-if-branch" title="else path not taken" >E</span>initializer {
+        // Reverts if the whitelist or access manager address is zero address.
+        if (
+            address(_whitelist) == address(0) ||
+            address(_accessManager) == address(0)
+        ) {
+            revert ZeroAddress();
+        }
+        // Reverts if the name or symbol is empty.
+        if (bytes(_name).length == 0 || bytes(_symbol).length == 0) {
+            revert NullValue();
+        }
+&nbsp;
+        // Sets the Bluum Factory contract instance.
+        factory = BluumFactory(msg.sender);
+&nbsp;
+        // Initializes the ERC721 contract.
+        __ERC721_init(_name, _symbol);
+&nbsp;
+        // Sets the access manager contract address.
+        accessManager = _accessManager;
+        // Sets the whitelist contract address.
+        whitelist = _whitelist;
+    }
+&nbsp;
+    /**
+     * @notice Mints multiple NFTs.
+     * @dev Only callable by a minter.
+     * @param _mintInputData The array of mint input data.
+     * @return _tokenIds The array of minted token IDs.
+     */
+    function mintBatch(
+        MintInputData[] calldata _mintInputData
+    ) external returns (uint256[] memory _tokenIds) {
+        _tokenIds = new uint256[](_mintInputData.length);
+        for (uint256 i = 0; i &lt; _mintInputData.length; ++i) {
+            _tokenIds[i] = mint(
+                _mintInputData[i]
+            );
+        }
+    }
+&nbsp;
+    /**
+     * @notice Mints an NFT.
+     * @dev Only callable by a minter.
+     * @param _inputData The mint input data.
+     * @return _tokenId The ID of the minted NFT.
+     */
+    function mint(
+        MintInputData calldata _inputData
+    ) public returns (uint256 _tokenId) {
+        // Reverts if the caller is not a minter.
+        if (!accessManager.hasRole(keccak256("MINTER_ROLE"), msg.sender)) {
+            revert OnlyMinterCanCall(msg.sender);
+        }
+        // Reverts if the recipient is not whitelisted.
+        if (!whitelist.isWhitelisted(_inputData.to, address(this))) {
+            revert IsNotWhitelisted(_inputData.to);
+        }
+&nbsp;
+        // Gets the next token ID.
+        _tokenId = tokenIdTracker.current();
+        tokenIdTracker.increment();
+&nbsp;
+        // Sets the token metadata.
+        Metadata storage metadata = tokenMetadata[_tokenId];
+        metadata.hashPrivateURI = _inputData.hashPrivateURI;
+        metadata.publicURI = _inputData.publicURI;
+&nbsp;
+        // Mints the token.
+        _safeMint(_inputData.to, _tokenId);
+        emit TokenMinted(_tokenId, _inputData.to);
+&nbsp;
+        return _tokenId;
+    }
+&nbsp;
+    /**
+     * @notice Reveals the private URI of an NFT.
+     * @dev Only callable by the owner of the NFT.
+     * @param _tokenId The ID of the NFT to reveal the private URI.
+     * @param privateURI The private URI of the NFT.
+     */
+    function revealPrivateURI(
+        uint256 _tokenId,
+        bytes calldata privateURI
+    ) external {
+        // Reverts if the caller is not the owner of the token.
+        if (msg.sender != ownerOf(_tokenId)) {
+            revert OnlyTokenOwnerCanCall(msg.sender);
+        }
+        // Reverts if the private IPFS hash is not the same as the one hashed.
+        if(keccak256(privateURI) != tokenMetadata[_tokenId].hashPrivateURI) {
+            revert WrongPrivateURI(privateURI);
+        }
+        // Updates the token metadata.
+        tokenMetadata[_tokenId].publicURI = privateURI;
+    }
+&nbsp;
+    /**
+     * @notice Returns true if a token exists
+     * @param _tokenId The ID of the token
+     * @return isMinted The state of the minting
+     */
+<span class="fstat-no" title="function not covered" >    function exists(uint256 _tokenId) external view returns (bool isMinted) {</span>
+<span class="cstat-no" title="statement not covered" >        return _exists(_tokenId);</span>
+    }
+&nbsp;
+    /**
+     * @notice Returns the URI of the token metadata.
+     * @param _tokenId The ID of the token to get the URI of.
+     * @return A string representing the token URI.
+     */
+    function tokenURI(
+        uint256 _tokenId
+    ) public view override (ERC721Upgradeable, IBluumNft) returns (string memory) {
+        // Reverts if the token does not exist.
+        if (!_exists(_tokenId)) {
+            revert WrongTokenId(_tokenId);
+        }
+&nbsp;
+        // Returns the URI 
+        return (
+            string(
+                abi.encodePacked(
+                    "data:application/json;base64,",
+                    Base64.encode(tokenMetadata[_tokenId].publicURI)
+                )
+            )
+        );
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Aug 04 2023 16:03:13 GMT+0200 (heure d’été d’Europe centrale)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

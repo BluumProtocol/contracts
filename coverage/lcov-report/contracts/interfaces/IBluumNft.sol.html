@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/interfaces/IBluumNft.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/interfaces/</a> IBluumNft.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/0</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity 0.8.18;
+&nbsp;
+// Importing necessary OpenZeppelin interfaces
+import "@openzeppelin/contracts-upgradeable/interfaces/IERC721Upgradeable.sol";
+&nbsp;
+/**
+ * @title IBluumNft
+ * @notice Interface for the BluumNFT contract
+ * @dev This interface should be implemented by the BluumNFT contract.
+ */
+interface IBluumNft is IERC721Upgradeable {
+    /**
+     * @notice Struct defining NFT metadata.
+     * @param publicURI The public URI of the NFT.
+     * @param hashPrivateURI The hash of the private URI of the NFT. 
+     */
+    struct Metadata {
+        bytes publicURI;
+        bytes32 hashPrivateURI;
+    }
+&nbsp;
+    /**
+     * @notice Struct defining the input data used in the mint function.
+     * @param to The address to mint the NFT to.
+     * @param publicURI The public URI of the NFT.
+     * @param hashPrivateURI The hash of the private URI of the NFT. 
+     */
+    struct MintInputData {
+        address to;
+        bytes publicURI;
+        bytes32 hashPrivateURI;
+    }
+&nbsp;
+    /// @notice This error is thrown when a non-admin tries to call a function that is admin only
+    error OnlyAdminCanCall(address caller);
+    /// @notice This error is thrown when a non-minter tries to call a function that is minter only
+    error OnlyMinterCanCall(address caller);
+    /// @notice This error is thrown when someone other than the factory tries to call a factory only function
+    error OnlyFactoryCanCall(address caller);
+    /// @notice This error is thrown when an address is not whitelisted
+    error IsNotWhitelisted(address caller);
+    /// @notice This error is thrown when a token ID has already been minted
+    error TokenIdAlreadyMinted(uint256 tokenId);
+    /// @notice This error is thrown when an incorrect token ID is provided
+    error WrongTokenId(uint256 tokenId);
+    /// @notice This error is thrown when a zero address is provided
+    error ZeroAddress();
+    /// @notice This error that is thrown when a null value is provided
+    error NullValue();
+    /// @notice This error is thrown when a non-owner tries to call a function that is owner only
+    error OnlyTokenOwnerCanCall(address caller);
+    /// @notice This error is thrown when a wrong private URI is provided
+    error WrongPrivateURI(bytes privateURI);
+&nbsp;
+    /// @notice This event is emitted when a new NFT is minted
+    event TokenMinted(uint256 indexed tokenID, address indexed owner);
+&nbsp;
+    /**
+     * @notice Mints multiple NFTs.
+     * @dev Only callable by a minter.
+     * @param _inputDataArray The array of mint input data.
+     * @return _tokenIds The array of minted token IDs.
+     */
+    function mintBatch(
+        MintInputData[] calldata _inputDataArray
+    ) external returns (uint256[] memory _tokenIds);
+&nbsp;
+    /**
+     * @notice Mints an NFT.
+     * @param _inputData The mint input data.
+     */
+    function mint(
+        MintInputData calldata _inputData
+    ) external returns (uint256 _tokenId);
+&nbsp;
+    /**
+     * @notice Reveals the private URI of an NFT.
+     * @dev Only callable by the owner of the NFT.
+     * @param _tokenId The ID of the NFT to reveal the private URI.
+     * @param privateURI The private URI of the NFT.
+     */
+    function revealPrivateURI(
+        uint256 _tokenId,
+        bytes calldata privateURI
+    ) external;
+&nbsp;
+    /**
+     * @dev Returns the metadata of the token.
+     * @param _tokenId The ID of the token to get the metadata of.
+     * @return _metadata The metadata of the token.
+     */
+    function exists(uint256 _tokenId) external view returns (bool);
+&nbsp;
+    /**
+     * @notice Returns the URI of the token metadata.
+     * @param _tokenId The ID of the token to get the URI of.
+     * @return A string representing the token URI.
+     */
+    function tokenURI(
+        uint256 _tokenId
+    ) external view returns (string memory);
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Aug 04 2023 16:03:13 GMT+0200 (heure d’été d’Europe centrale)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
